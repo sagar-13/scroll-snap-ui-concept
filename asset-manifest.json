@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/scroll-snap-ui-concept/static/css/main.b284a77c.css",
+    "main.js": "/scroll-snap-ui-concept/static/js/main.d2966114.js",
+    "index.html": "/scroll-snap-ui-concept/index.html",
+    "main.b284a77c.css.map": "/scroll-snap-ui-concept/static/css/main.b284a77c.css.map",
+    "main.d2966114.js.map": "/scroll-snap-ui-concept/static/js/main.d2966114.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b284a77c.css",
+    "static/js/main.d2966114.js"
+  ]
+}
