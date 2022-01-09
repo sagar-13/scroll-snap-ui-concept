@@ -1,6 +1,6 @@
 {
-    "name": "locked-scrolling-demo",
-    "homepage": "http://sagar-13.github.io/locked-scrolling-demo",
+    "name": "scroll-snap-ui-concept",
+    "homepage": "http://sagar-13.github.io/scroll-snap-ui-concept",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
