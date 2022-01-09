@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import {useEffect, useState} from "react";
+import Section from "./section";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [indicator, setIndicator] = useState("one");
+
+    const [isExpanded, setExpanded] = useState(false);
+
+    const updateIndicator = (section) => {
+        setIndicator(section);
+    };
+    return (<div className={
+        `App ${
+            isExpanded ? "overflow-hidden" : "overflow-scroll"
+        }`
+    }> {
+        ["one", "two", "three", "four"].map((num) => (<Section key={num}
+            num={num}
+            updateIndicator={updateIndicator}
+            isExpanded={isExpanded}
+            setExpanded={
+                (x) => setExpanded(x)
+            }/>))
+    }
+
+        <div className="indicator"> {
+            ["one", "two", "three", "four"].map((x) => (<div key={x}
+                className={
+                    indicator === x ? "active vl" : "vl"
+            }></div>))
+        } </div>
+    </div>);
 }
 
 export default App;
