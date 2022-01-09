@@ -1,45 +1,52 @@
-import { useEffect, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import {useEffect} from "react";
+import {useInView} from "react-intersection-observer";
 import "./App.css";
 
-function Section({ num, updateIndicator, setExpanded, isExpanded }) {
-    const { ref, inView, entry } = useInView({
-        /* Optional options */
-        rootMargin: "-100px 0px",
+function Section({num, updateIndicator, setExpanded, isExpanded}) {
+    const {ref, inView, entry} = useInView({ /* Optional options */
+        rootMargin: "-100px"
     });
 
     useEffect(() => {
-        if (inView) updateIndicator(num);
+        if (inView) 
+            updateIndicator(num);
+        
+
+
         setExpanded(false);
     }, [inView]);
     return (
         <section ref={ref}>
-            <div
-                onClick={() => {
-                    setExpanded(!isExpanded);
-                }}
-                className={`${inView ? "animate num" : "num"} ${
-                    isExpanded ? "bigView" : ""
-                }`}
-            >
+            <div onClick={
+                    () => {
+                        setExpanded(!isExpanded);
+                    }
+                }
+                className={
+                    `${
+                        inView ? "animate num" : "num"
+                    } ${
+                        isExpanded ? "bigView" : ""
+                    }`
+            }>
                 Section {num}
-                <br />
+                <br/>
                 <h2>
-                    Section in viewport: <strong>{`${inView}`}</strong>
+                    Section in viewport:
+                    <strong>{
+                        `${inView}`
+                    }</strong>
                 </h2>
-                {isExpanded && (
+                {
+                isExpanded && (
                     <>
-                        <img
-                            src="https://picsum.photos/200/300"
-                            alt="random pic"
-                        />
+                        <img src="https://picsum.photos/300/300" alt="random pic"/>
                         <p>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Voluptate, illo.
+                            Lorem, ipsum dolor sit amet consectetur adipisicing                                                                                                                                                                       elit. Voluptate, illo.
                         </p>
                     </>
-                )}
-            </div>
+                )
+            } </div>
         </section>
     );
 }
